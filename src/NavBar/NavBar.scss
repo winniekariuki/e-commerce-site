@@ -1,0 +1,148 @@
+/* Style the navigation bar */
+.navbar {
+  background-color: white;
+  float:center;
+  padding-top: 10px;
+  padding-bottom: 50px;
+ 
+  .Euros{
+    padding-left:50px;
+    padding-top:0px;
+  &__p{
+  font-size:20px;
+  font-weight:700;
+}
+  }
+  .centerNav {
+  padding-left:50px;
+  color:black;
+  font-weight:900;
+  font-size:30px;
+}
+.price{
+   padding-top:0px;
+}
+}
+
+
+
+
+/* Navbar links */
+.navbar a {  float: left;
+text-align: center;
+padding: 12px;
+color: black;
+text-decoration: none;
+ font-size: 17px;
+}
+
+.sign{
+  .link{
+  color:red;
+  font-size: 20px;
+   font-weight:500;
+}
+}
+.top{
+background-color: green;
+}
+
+/* Navbar links on mouse-over */
+.navbar a:hover {
+  background-color: #000;
+}
+
+/* Current/active navbar link */
+.active {
+  background-color: #4CAF50;
+}
+
+/* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+.Categories{
+ background-color: black;
+  padding-top: 10px;
+  padding-bottom: 50px;
+  .search-bar{
+    border-radius:40px;
+    float:left;
+    padding-top:15px;
+    height:30px;
+    background: #BEBDB8;
+    padding:10px;
+    width:200px;
+  }
+  .search-button{
+    float:left;
+    width:30px;
+    border-radius:50%;
+    background: #BEBDB8;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .close-button{
+ 
+    float:right;
+    width:30px;
+    border-radius:50%;
+    background: #BEBDB8;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .search-text{
+    border:none;
+    background:none;
+    outline:none;
+    float:center;
+    padding-left:50px;
+    color:white;
+    font-size: 16px;
+    width:190px;
+  
+  }
+  .search-box:hover > .search.text{
+    width:240px;
+    padding: 0 6px;
+  }
+  .search-box:hover > .search-button{
+    width:240px;
+    padding: 0 6px;
+  }
+.brand a{
+color:red;
+padding-right:50px;
+text-decoration: none;
+padding-left: 30px;
+// padding-bottom:500px;
+float:left;
+font-weight:900;
+font-size: 35px;
+// padding-top:0px;
+  }
+ .Price{
+   padding-left:890px;
+   padding-top:25px;
+   padding-bottom: 25px;
+ 
+ }
+.CategoriesList{
+     padding-left: 200px;
+  }
+.CategoriesList a{
+float: left;
+padding-top:50px;
+// padding-bottom:80px;
+text-align: center;
+padding: 12px;
+color: white;
+text-decoration: none;
+ font-size: 17px;
+  } 
+}
