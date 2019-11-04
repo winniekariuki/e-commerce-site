@@ -1,11 +1,23 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
+import {ButtonContainer} from './Button';
 
-export default class Product extends Component {
-    render() {
-        return (
-            <div>
-               <h3>Hello from product</h3> 
-            </div>
+
+export default function Product({name, description,price, discounted_price,thumbnail}) {
+    return (
+            <div className="card" style="width: 18rem;">
+        <img src={thumbnail} className="card-img-top" alt="..."/>
+        <div className="card-body">
+      <h5 className="card-title">{name, price,discounted_price}</h5>
+      
+     <p className="card-text">{description}</p>
+     <Link to="/cart" className="ml-auto">
+        <ButtonContainer>
+        Add to my Cart
+        </ButtonContainer>
+    </Link>
+  </div>
+</div>
         )
-    }
-}
+
+    } 
