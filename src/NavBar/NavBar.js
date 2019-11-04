@@ -1,57 +1,27 @@
 import React, { Component } from 'react';
 import './NavBar.scss';
 
+
 export class NavBar extends Component{
   render() {
     return (
-      <div>
+    
         <div className="navbar">
           <div className="sign">
-            <a href="#" className="link">Sign in</a>
-            <a href="#" className="link">Register</a>
+            <a href="#" className="btn btn-primary">Sign in</a>
+            <a href="#" className="btn btn-primary">Register</a>
           </div>
           <div className="centerNav">
-        <a  href="#">Daily Deals</a>
-        <a  href="#">Sell</a>
-            <a href="#">Help & Contact</a>
-          </div>
-          <div className="Euros">
-            <a href="#"> <img src="https://res.cloudinary.com/dievrxv8v/image/upload/v1569091263/e-commerce/gbr_ocrdzl.png" /> </a>
-            <a href="#" > € GBP</a>
-          </div>
-          <div className="Price">
-            <a href="#" ><img src="https://res.cloudinary.com/dievrxv8v/image/upload/v1569091265/e-commerce/icons-bag_ytqn9i.png" /></a>
-            <a href="#" ><p> Your Bag: €3.99 </p></a>
-          </div>
-        </div>
-      
-        <div className="Categories">
-            <div className="brand">
-              <a href="#">SHOPMATE</a>
-            </div>
-            <div className="CategoriesList">
-              <a href="#">Women</a>
-              <a href="#">Men</a>
-              <a href="#">Kids</a>
-              <a href="#">Shoes</a>
-              <a href="#">Brands</a>
-          </div>
-          <div className="search-bar">
-            <input  className="search-text" type="text" name="" placeholder="Search anything"/>
-            <a className="search-button" href="#">
-              <img src="https://res.cloudinary.com/dievrxv8v/image/upload/v1569091271/e-commerce/icons-search-white_wekd6k.png"/>
-            </a>
-            <a className="close-button" href="#">
-              <img src="https://res.cloudinary.com/dievrxv8v/image/upload/v1569091262/e-commerce/close-big-white_mnifsw.png" />
-            </a>
-            
-          </div>
-        
-            <div className="Price">
-            <a href="#" ><img src="https://res.cloudinary.com/dievrxv8v/image/upload/v1569091265/e-commerce/icons-bag-white_hbna20.png" /></a>
-            </div>
-          </div>
+          <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
 
+  </div>
+      <div className="shoppingcart">
+        <img src="https://previews.123rf.com/images/val2014/val20141603/val2014160300006/54302308-shopping-cart-icon.jpg" height="30" width="30"/>
+      </div>
+        
       </div>
     )
   }

@@ -1,23 +1,14 @@
 /* Style the navigation bar */
 .navbar {
-  background-color: white;
+  background-color: lightblue;
   float:center;
   padding-top: 10px;
-  padding-bottom: 50px;
- 
-  .Euros{
-    padding-left:50px;
-    padding-top:0px;
-  &__p{
-  font-size:20px;
-  font-weight:700;
-}
-  }
+
   .centerNav {
-  padding-left:50px;
   color:black;
   font-weight:900;
   font-size:30px;
+  margin:0 auto;
 }
 .price{
    padding-top:0px;
