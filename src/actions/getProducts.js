@@ -1,5 +1,6 @@
 import { GET_ALL_PRODUCTS_SUCCESS, GET_ALL_PRODUCTS_FAILURE } from "./types";
-// import urlPath from "../configs/axios";
+
+import urlPath from '../Config/axios';
 
 export const getAllProductsAction = () => ({ type: GET_ALL_PRODUCTS_SUCCESS });
 export const success = products => ({
@@ -11,13 +12,19 @@ export const failure = error => ({
   payload: error
 });
 
-export const getProducts = () => (dispatch, getState, http) => {
+export const getProducts = () => dispatch => {
   const endpoint = `https://backendapi.turing.com/products`;
 
-  return http
-    .get(endpoint)
+  return urlPath
+    .request({
+      method: "get",
+      url: endpoint
+    })
+
     .then(response => {
-      const { data } = response.data;
+   
+      const { data } = response;
+      
       const type = GET_ALL_PRODUCTS_SUCCESS;
 
       dispatch(success(data, type));

@@ -1,9 +1,10 @@
 import axios from 'axios';
-import { BASE_URL } from '../actions/types';
+// import { BASE_URL } from '../actions/types';
 
-const token = localStorage.getItem('token');
+const BASE_URL = 'https://backendapi.turing.com/';
+// const token = localStorage.getItem('token');
 const urlPath = axios.create({
-  baseURL: `${BASE_URL}/`,
+  baseURL: BASE_URL,
   headers: {
     'Content-Type': 'application/json',
   },

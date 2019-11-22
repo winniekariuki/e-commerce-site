@@ -15,9 +15,9 @@ export default function Product({
     <div className="row">
       <div className="column">
         <div className="card">
-          <img src={baby} className="card-img-top" alt="..." />
+          <div className="card-img-top" alt="..." >{thumbnail} </div>
           <div className="card-body">
-            <h5 className="card-title">{(name, price, discounted_price)}</h5>
+            <h5 className="card-title">{(name={name}, price, discounted_price)}</h5>
 
             <p className="card-text">{description}</p>
             <Link to="/cart" className="ml-auto">
