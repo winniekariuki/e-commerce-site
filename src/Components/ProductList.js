@@ -18,16 +18,8 @@ export class ProductList extends Component {
       products: []
     };
   }
-
-  // componentDidMount() {  //   this.props.getProducts()
-  //   console.log("mount",this.props.getProducts)
-
-  // }
-
-
   componentWillMount() {
     this.props.getProducts();
-    console.log(this.props.getProducts(),"props")
   }
 
   componentWillReceiveProps(newProps) {
@@ -35,61 +27,30 @@ export class ProductList extends Component {
       products: newProps.products.rows,
      
     });
-    console.log(newProps.products.rows,"products")
   }
 
-  // componentDidMount() {
-  //   this.props.getProducts()
-  //   console.log("mount",this.props.getProducts())
-  // }
-  // componentWillMount() {
-  //   this.props.getProducts();
-
-  // }
-  // componentWillReceiveProps(newProps) {
-  //   if (newProps.products.rows !== this.props.rows ) {
-  //     this.setState({
-  //       products: newProps.products
-  //     });
-
-  //   }
-  // }
   render() {
     let productsArray = this.state.products;
-    // const arrayLength = productsArray.length;
-
-    // if (arrayLength > 6) {
-    //   productsArray = productsArray.slice(Math.max(arrayLength - 6, 1));
-    // }
     const productItem = productsArray.map(product => (
       <Product
+      thumbnail={product.thumbnail}
         name={product.name}
-        description={product.description}
         price={product.price}
-        discounted_price={product.discounted_price}
-        thumbnail={product.thumbnail}
+           discounted_price={product.discounted_price}
+        description={product.description}
+   
       />
     ));
     
-  
-    // let {rows}  = this.state.products.rows ? this.state.products.rows[1] : this.state.products.rows ;
-    // console.log(this.state.products.rows ? this.state.products.rows[1] : this.state.products.rows, "rowssss")
-  
     return (
       <div>
-      
-      {/* <Container>
-              <CardColumns> */}
             <Carousel />
             <Container>
               <CardColumns>
-       
             {productItem}
           </CardColumns>
           </Container>
-          </div>
-        
-      
+          </div> 
     );
   }
 }
