@@ -20,7 +20,7 @@ export default function Product({
       <div className="column">
         <div className="card">
           <div className="card-img-top" >
-            <Image src={require(`../product_images/${thumbnail}`)} alt={thumbnail} height="200px"width="350px" />
+            <Image src={require(`../product_images/${thumbnail}`)} alt={thumbnail} height="200px"width="300px" />
             <p >{parseInt(discounted_price, 10) ? <img src={stamp} height="70px" width="60px" className="discount" alt="discount-stamp" /> : null}</p>
  </div>
           <div className="card-body">
