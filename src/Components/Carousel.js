@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Carousel.scss";
 import baby from "./baby1.jpg";
-import velvet from "./velvet.jpg";
+import velvet from "./weather-vane-2.gif";
 import baby3 from "./baby3.jpg";
 import baby4 from "./baby4.jpg";
 
