@@ -29,8 +29,6 @@ export const getProducts = () => dispatch => {
 
       dispatch(success(data, type));
     })
-    .catch(error => {
-      dispatch(error.response.data.message, "danger");
-    });
+
 };
 export default getProducts;

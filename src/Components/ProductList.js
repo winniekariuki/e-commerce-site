@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import Product from "./Product";
-import Title from "./Title";
 import Carousel from "./Carousel";
-// import { connect } from "react-redux";
 import { connect } from "react-redux";
 import getProducts from "../actions/getProducts";
+import Footer from "./Footer";
 
 import {
   CardColumns,
@@ -40,16 +39,18 @@ export class ProductList extends Component {
         description={product.description}
    
       />
+  
     ));
-    
     return (
+     
       <div>
             <Carousel />
             <Container>
               <CardColumns>
             {productItem}
           </CardColumns>
-          </Container>
+        </Container>
+        <Footer/>
           </div> 
     );
   }

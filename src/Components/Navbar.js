@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import logo from "../shoppingCart.png";
+import logo from "./logo2.jpg";
+import cart from "../shoppingCart.png";
 import styled from "styled-components";
 import { ButtonContainer } from "./Button";
 import Search from "./Search";
@@ -10,7 +11,7 @@ export default class Navbar extends Component {
     return (
       <NavWrapper className="navbar navbar-expand-sm bg-primary navbar-dark px-sm-5">
         <Link to="/">
-          <img src={logo} alt="logo" />
+          <img src={logo} alt="logo"  height="55px" width="100px"/>
         </Link>
         <ul className="navbar-nav align-items-center">
           <li className="nav-item ml-12">
@@ -19,13 +20,13 @@ export default class Navbar extends Component {
             </Link>
           </li>
         </ul>
-        <div className="Search  ml-20">
+        <div className="Search">
           <Search />
         </div>
 
         <Link to="/cart" className="ml-auto">
           <ButtonContainer>
-            <img src={logo} alt="logo" />
+            <img src={cart} alt="logo" />
             my cart
           </ButtonContainer>
         </Link>

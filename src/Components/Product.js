@@ -50,10 +50,6 @@ export default function Product({
            
               </p> 
               </div>
-        
-            {/* <p>discount:{ discounted_price}</p> */}
-            {/* <p>{description}</p> */}
-
             <p className="card-description">{description}</p>
             <Link to="/cart" className="ml-auto">
               <ButtonContainer>Add to my Cart</ButtonContainer>

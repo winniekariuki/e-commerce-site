@@ -1,18 +1,12 @@
 import React, { Component } from 'react';
+import "./footer.scss";
 
 
 class Footer extends Component {
   render() {
     return (
-      <footer className="bg-dark page-footer font-small blue">
-        <div className="footer-copyright text-center py-3">
-          All Rights Reserved
-          <br />
-          Shopify.com
-          <br />
-          © 2019
-          <br />
-        </div>
+      <footer className="footer">
+          All Rights Reserved   Shopify.com   © 2019
       </footer>
     );
   }
