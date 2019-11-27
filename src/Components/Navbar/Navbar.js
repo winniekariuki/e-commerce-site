@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import logo from "./logo2.jpg";
-import cart from "../shoppingCart.png";
+import logo from "../../Image/logo.png";
+import cart from "../../shoppingCart.png";
 import styled from "styled-components";
-import { ButtonContainer } from "./Button";
-import Search from "./Search";
+import { ButtonContainer } from "../Button/Button";
+import Search from "../Search/Search";
 
 export default class Navbar extends Component {
   render() {

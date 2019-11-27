@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import { ButtonContainer } from "./Button";
-import stamp  from "./stamp.jpg"
+import stamp  from "../../Image/stamp.jpg"
 import "./Product.scss";
 import {
 Image
@@ -13,14 +11,15 @@ export default function Product({
   description,
   price,
   discounted_price,
-  thumbnail
+  thumbnail,
+  button
 }) {
   return (
     <div className="row">
       <div className="column">
         <div className="card">
           <div className="card-img-top" >
-            <Image src={require(`../product_images/${thumbnail}`)} alt={thumbnail} height="200px"width="300px" />
+            <Image src={require(`../../product_images/${thumbnail}`)} alt={thumbnail} height="200px"width="300px" />
             <p >{parseInt(discounted_price, 10) ? <img src={stamp} height="70px" width="60px" className="discount" alt="discount-stamp" /> : null}</p>
  </div>
           <div className="card-body">
@@ -51,9 +50,7 @@ export default function Product({
               </p> 
               </div>
             <p className="card-description">{description}</p>
-            <Link to="/cart" className="ml-auto">
-              <ButtonContainer>Add to my Cart</ButtonContainer>
-            </Link>
+              <p>{button}</p>
           </div>
         </div>
       </div>

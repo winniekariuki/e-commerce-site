@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import "./Carousel.scss";
-import baby from "./baby1.jpg";
-import velvet from "./baby3.jpg";
-import baby3 from "./baby3.jpg";
-import baby4 from "./baby4.jpg";
+import baby from "../../Image/image1.jpg";
+import velvet from "../../Image/imag2.jpg";
+import baby3 from "../../Image/image3.jpg";
+import baby4 from "../../Image/men.jpg";
 
 class Carousel extends Component {
   render() {

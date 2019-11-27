@@ -13,5 +13,11 @@
   .active-cyan-4{
     width: 356px;
     margin-left: 342px;
+    @media only screen and (min-width : 768px) {
+      width: 75%;
+    }
+    @media only screen and (min-width : 992px) {
+      width: 50%;
+    }
   }
 
