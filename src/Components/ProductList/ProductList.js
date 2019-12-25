@@ -4,9 +4,9 @@ import Carousel from "../Carousel/Carousel";
 import { connect } from "react-redux";
 import getProducts from "../../actions/getProducts";
 import Footer from "../Footer/Footer";
-import { Link } from "react-router-dom";
 import { ButtonContainer } from "../Button/Button";
-import { addProducts, addProductsAction } from '../../actions/addProducts';
+
+
 
 import {
   CardColumns,
@@ -17,14 +17,19 @@ export class ProductList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      products: []
+      products: [],
+      visible: 12,
+      isLoading: true,
+      loadmore: false
     };
+    this.loadMore = this.loadMore.bind(this);
   }
   componentWillMount() {
-    const { match: { params: { id } }, getProducts }= this.props;
+    const { match: { params: { id } }} = this.props;
     this.props.getProducts();
-    this.props.getProducts(id);
-  }
+      this.props.getProducts(id);
+    }
+  
 
   componentWillReceiveProps(newProps) {
     this.setState({
@@ -32,6 +37,7 @@ export class ProductList extends Component {
      
     });
   }
+  
 
    
   handleClick = (id)=>{
@@ -40,6 +46,11 @@ export class ProductList extends Component {
   }
   
 
+  loadMore = () => {
+    this.setState(prev => {
+      return { visible: prev.visible + 12 };
+    });
+  };
   render() {
     let productsArray = this.state.products;
     const productItem = productsArray.map(product => (
@@ -50,9 +61,8 @@ export class ProductList extends Component {
         discounted_price={product.discounted_price}
         description={product.description}
         button={  
-        <ButtonContainer onClick={()=>{this.handleClick(product.id)}}>Add to my Cart</ButtonContainer>
+        <ButtonContainer  onClick={()=>{this.handleClick(product.id)}}>Add to my Cart</ButtonContainer>
       }
-      
       />
   
     ));
@@ -61,9 +71,9 @@ export class ProductList extends Component {
       <div>
             <Carousel />
             <Container>
-              <CardColumns>
-            {productItem}
-       
+          <CardColumns>
+     {productItem}
+         
           </CardColumns>
         </Container>
         <Footer/>
@@ -77,11 +87,5 @@ const mapStateToProps = state => {
 
   }
 };
-// export const mapDispatchToProps = dispatch => 
-//   {
-//     return{
-//       addProducts: (id) => { dispatch(addProducts(id)) }
-// }
-//  addProducts: payload => dispatch(addProducts(payload)),
-// };
+
 export default connect(mapStateToProps, { getProducts})(ProductList);
