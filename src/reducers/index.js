@@ -2,19 +2,11 @@
 import { combineReducers } from 'redux';
 
 import products from './getProducts';
-import {getShoppingCartId, addProductToCart, getShoppingCartTotal, getShoppingCartItems} from './addToCart';
+import {addProductToCart} from './getProducts';
 
 const rootReducer = combineReducers({
     products,
-    shoppingCart: addProductToCart,
-
-    
-    
-    cardId: getShoppingCartId,
- 
-    total: getShoppingCartTotal,
-    items: getShoppingCartItems,
-
+    shoppingCart: addProductToCart
 });
 export default rootReducer;
 

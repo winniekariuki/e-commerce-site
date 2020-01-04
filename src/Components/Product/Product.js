@@ -5,7 +5,7 @@ import {
 Image
 } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import Flippy, { FrontSide, BackSide } from 'react-flippy';
+import Flippy, { FrontSide,BackSide } from 'react-flippy';
 
 export default function Product({
   name,
