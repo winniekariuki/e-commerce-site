@@ -1,31 +1,28 @@
-import { ADD_TO_CART} from "./types";
+import axios from 'axios';
+import { ADD_TO_CART_REQUEST, ADD_TO_CART_SUCCESS, ADD_TO_CART_FAILURE } from './types';
 
-// import urlPath from '../Config/axios';
+const baseUrl = 'https://backendapi.turing.com';
 
+export const addtocartRequest = () => ({
+  type: ADD_TO_CART_REQUEST
+});
 
-export const addToCart= (id)=>{
-  return{
-      type: ADD_TO_CART,
-       id }
-  }
+export const addtocartSuccess = (data) => ({
+  type: ADD_TO_CART_SUCCESS,
+  data
+});
 
-// export const addToCart = () => dispatch => {
-//   const endpoint = `https://backendapi.turing.com/shoppingcart/add`;
+export const addtocartFailure = (errors) => ({
+  type: ADD_TO_CART_FAILURE,
+  errors
+});
 
-//   return urlPath
-//     .request({
-//       method: "post",
-//       url: endpoint
-//     })
+const addtocartActions = (data) => dispatch => {
+  dispatch(addtocartRequest());
+  const url = `${baseUrl}/shoppingcart/add`;
+  return axios.post(url, data)
+      .then(response => dispatch(addtocartSuccess(response.data)))
+      .catch(error => dispatch(addtocartFailure(error)));
+}
 
-//     .then(response => {
-   
-//       const { data } = response;
-      
-//       const type = ADD_TO_CART;
-
-//       dispatch(success(data, type));
-//     })
-
-// };
-// export default addToCart;
+export default addtocartActions;

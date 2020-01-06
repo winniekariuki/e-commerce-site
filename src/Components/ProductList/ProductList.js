@@ -3,10 +3,16 @@ import Product from "../Product/Product";
 import Carousel from "../Carousel/Carousel";
 import { connect } from "react-redux";
 import getProducts from "../../actions/getProducts";
+import getGeneratedCartId from "../../actions/generateUniqueId";
+import addtocartAction from "../../actions/addProducts"
 import Footer from "../Footer/Footer";
 import { ButtonContainer } from "../Button/Button";
 import { PushSpinner } from "react-spinners-kit";
-// import { addToCart } from '../../actions/addProducts';
+import addtocartActions from '../../actions/addProducts';
+import * as accessCart from '../../Utilis/cart';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { Link } from "react-router-dom";
 
 
 
@@ -26,18 +32,20 @@ export class ProductList extends Component {
       total: '',
       pageTotal: 1,
       isLoading: false,
+      currentPage: 1
     };
+
 
   };
   componentDidMount() {
-    const { match: { params: { id } } } = this.props;
-    // const { metaData } = this.props};
+    const { match: { params: { id } }, getProducts, getGeneratedCartId } = this.props;
     const queryParams = {
       page: 1,
       limit: 30,
       description_length: 200
     };
-    this.props.getProducts(queryParams);
+    getProducts(queryParams);
+    getGeneratedCartId();
      
     }
   
@@ -45,8 +53,7 @@ export class ProductList extends Component {
   componentWillReceiveProps(newProps) {
     this.setState({
       products: newProps.products.rows,
-      isLoading: true
-  
+      isLoading: true,
     });
   }
  
@@ -55,30 +62,43 @@ export class ProductList extends Component {
         page: pageNumber,
         limit: 30,
         description_length:200
-      }
-      
+       }
+       this.setState({
+        currentPage : queryParams.page
+       });
        this.props.getProducts(queryParams)
-       console.log(queryParams,"hey")
      
   }
  
   
 
    
-  handleClick = (id)=>{
-    this.props.addToCart(id); 
+  handleClick = (productId) => {
+    const { addToCart } = this.props;
+    const itemAttributes = "";
+    const generatedId = accessCart.getGeneratedCartId();
+    const payload = {
+      cart_id: generatedId,
+      product_id: productId,
+      attributes: itemAttributes
+    };
+    toast.success("Added to cart successfully !");
+ 
+    
+    addToCart(payload).then(data => {
+    }); 
   }
   
 
-  loadMore = () => {
+  loadMore = () =>
+  
+  {
     this.setState(prev => {
       return { visible: prev.visible + 12 };
     });
   };
   render() {
     let productsArray = this.state.products;
-    console.log( this.state.products,">>>><<")
-    
     const productItem = productsArray.map(product => (
       <Product
         thumbnail={product.thumbnail}
@@ -87,7 +107,8 @@ export class ProductList extends Component {
         discounted_price={product.discounted_price}
         description={product.description}
         button={  
-        <ButtonContainer  onClick={()=>{this.handleClick(product.id)}}>Add to my Cart</ButtonContainer>
+         <ButtonContainer onClick={() => { this.handleClick(product.product_id) }}>Add to my Cart</ButtonContainer>
+      
       }
       />
   
@@ -100,23 +121,19 @@ export class ProductList extends Component {
           {!this.state.isLoading ? < PushSpinner style={"margin-left:500px;"}/>
         :
             <CardColumns>
-             {productItem}
+              {productItem}
+              <ToastContainer position={toast.POSITION.TOP_CENTER} toastClassName="dark-toast"
+/>
             </CardColumns>
           }
             <nav aria-label="...">
   <ul className="pagination justify-content-center">
    
-    <li className="page-item"><a className="page-link" onClick={()=>{this.onClickhandler (1)}}>1</a></li>
-    <li className="page-item ">
-      <span className="page-link" onClick={()=>{this.onClickhandler (2)}}>
-        2
-        <span className="sr-only"></span>
-      </span>
-    </li>
-    <li className="page-item"><a className="page-link"  onClick={()=>{this.onClickhandler (3)}}>3</a></li>
-    <li className="page-item">
-      <a className="page-link" onClick={()=>{this.onClickhandler (4)}}>Next</a>
-    </li>
+     <li className={(this.state. currentPage === 1? ' active' : '') + ' page-item'}><a className="page-link" onClick={() => { this.onClickhandler(1) }}>1</a></li>
+     <li className={(this.state.currentPage === 2 ? 'active' : '') + ' page-item'}><a className="page-link"  onClick={()=>{this.onClickhandler (2)}}>2</a></li>
+    <li className={(this.state.currentPage === 3 ? 'active' : '') + ' page-item'}><a className="page-link"  onClick={()=>{this.onClickhandler (3)}}>3</a></li>
+    <li className={(this.state.currentPage === 4 ? 'active ' : '') + ' page-item'}><a className="page-link"  onClick={()=>{this.onClickhandler (4)}}>4</a></li>
+  
   </ul>
 </nav>
         </Container>
@@ -127,7 +144,9 @@ export class ProductList extends Component {
 }
 export const mapDispatchToProps = dispatch => ({
   // addToCart: (id) => { dispatch(addToCart(id)) },
-  getProducts: id=> dispatch( getProducts(id)),
+  getProducts: id => dispatch(getProducts(id)),
+  getGeneratedCartId: () => dispatch(getGeneratedCartId()),
+  addToCart: data => dispatch(addtocartActions(data))
        }
 )
 const mapStateToProps = state => {
