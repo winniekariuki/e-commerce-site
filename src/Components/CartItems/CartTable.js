@@ -17,8 +17,8 @@ const ShoppingCartTable = ({...props}) => {
                     <table id="cart" className="table table-hover table-condensed">
                         <thead>
                             <tr>
-                                <th className="prod" >Product</th>
-                                <th className="pesa" >Price</th>
+                                <th className="product" >Product</th>
+                                <th className="price" >Price</th>
                                 <th className="quantity" >Quantity</th>
                                 <th className="text-center subt">Subtotal</th>
                             </tr>
