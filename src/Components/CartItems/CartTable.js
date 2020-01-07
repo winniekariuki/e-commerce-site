@@ -20,7 +20,7 @@ const ShoppingCartTable = ({...props}) => {
                                 <th className="product" >Product</th>
                                 <th className="price" >Price</th>
                                 <th className="quantity" >Quantity</th>
-                                <th className="text-center subt">Subtotal</th>
+                                <th className="text-center">Subtotal</th>
                             </tr>
                         </thead>
                         {shoppingCartData.map(cartData =>
