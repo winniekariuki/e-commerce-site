@@ -65,7 +65,7 @@ const ShoppingCartTable = ({...props}) => {
                         )}
                         <tfoot>
                             <tr>
-                                <td><Link to="/" className="add-to-cart back-btn btn btn-default"><i className="fa fa-angle-left"></i> Continue Shopping</Link></td>
+                                <td><Link to="/" className="add-to-cart back-btn btn btn-default"><i className="fa fa-angle-left btn btn-danger"></i> Continue Shopping</Link></td>
                                 <td className="actions" data-th="">
                                     <Link onClick={handleDelete} to="" className="add-to-cart btn btn-success"><i className="fas fa-trash-alt"></i> Empty</Link>
                                 </td>

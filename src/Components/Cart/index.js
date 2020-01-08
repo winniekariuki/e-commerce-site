@@ -44,8 +44,6 @@ class ShoppingCart extends Component {
         if (this.props.cartData.data && this.props.shoppingCartTotal.data) {
             cartArray = this.props.cartData.data;
             totalItemInCart = this.computeTotal(cartArray);
-            console.log(this.props
-                , "sjdsjbdsbdcbcdbnsdbndsabnsadbsab")
     }
    return (
        <div>

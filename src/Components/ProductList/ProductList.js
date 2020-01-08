@@ -143,7 +143,6 @@ export class ProductList extends Component {
   }
 }
 export const mapDispatchToProps = dispatch => ({
-  // addToCart: (id) => { dispatch(addToCart(id)) },
   getProducts: id => dispatch(getProducts(id)),
   getGeneratedCartId: () => dispatch(getGeneratedCartId()),
   addToCart: data => dispatch(addtocartActions(data))
