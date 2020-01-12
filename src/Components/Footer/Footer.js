@@ -6,7 +6,7 @@ class Footer extends Component {
   render() {
     return (
       <footer className="footer">
-          All Rights Reserved   Shopify.com   © 2019
+          All Rights Reserved   Shopify.com   © 2020
       </footer>
     );
   }

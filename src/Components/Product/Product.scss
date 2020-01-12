@@ -113,16 +113,20 @@ body {
       position: absolute;
       bottom: 165px;
       left: 277px;
-      // width: auto;
       color: #FFF;
       display: inline;
-      // float: center;
-      // font-size: 12px;
-      // font-weight: 800;
       text-transform: uppercase;
-      // height: auto;
-      // background-color: rgb(255, 0, 21);
-      // line-height: 16px;
+ 
+    }
+    .back-discount{
+      transition: all 100ms cubic-bezier(0.25,0.25,0.84,0.325);
+      padding: 4px 6px 5px 6px;
+      position: absolute;
+      bottom: 131px;
+      left: 277px;
+      color: #FFF;
+      display: inline;
+      text-transform: uppercase;
     }
   }
   

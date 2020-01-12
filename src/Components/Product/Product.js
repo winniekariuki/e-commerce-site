@@ -63,8 +63,8 @@ export default function Product({
             className="card-back"  >
        
               <div className="card-img-top" >
-                <Image src={require(`../../product_images/${thumbnail}`)} alt={thumbnail} height="200px" width="300px" />
-                <p >{parseInt(discounted_price, 10) ? <img src={stamp} height="70px" width="60px" className="discount" alt="discount-stamp" /> : null}</p>
+                <Image src={require(`../../product_images/${thumbnail}`)} alt={thumbnail} height="150px" width="300px" />
+                <p >{parseInt(discounted_price, 10) ? <img src={stamp} height="40px" width="50px" className="back-discount" alt="discount-stamp" /> : null}</p>
               </div>
               <div>
                 <p className="card-description">{description}</p>

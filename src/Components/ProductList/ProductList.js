@@ -70,7 +70,6 @@ export class ProductList extends Component {
      
   }
  
-  
 
    
   handleClick = (productId) => {
@@ -83,6 +82,11 @@ export class ProductList extends Component {
       attributes: itemAttributes
     };
     toast.success("Added to cart successfully !");
+  
+    setTimeout(() => { 
+      this.props.history.push('/cart');
+  }, 1500)
+
  
     
     addToCart(payload).then(data => {
@@ -107,7 +111,7 @@ export class ProductList extends Component {
         discounted_price={product.discounted_price}
         description={product.description}
         button={  
-         <ButtonContainer onClick={() => { this.handleClick(product.product_id) }}>Add to my Cart</ButtonContainer>
+          <ButtonContainer onClick={() => { this.handleClick(product.product_id) }}>Add to my Cart</ButtonContainer>
       
       }
       />

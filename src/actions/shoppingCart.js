@@ -20,7 +20,8 @@ export const fetchshoppingcartRequest = () => ({
 
 const shoppingcartActions = (cartId) => dispatch => {
   dispatch(fetchshoppingcartRequest());
-  const url = `${baseUrl}/shoppingcart/${cartId}`;
+    const url = `${baseUrl}/shoppingcart/${cartId}`;
+    console.log("heey", cartId)
   return axios(url)
     .then(response => dispatch(fetchshoppingcartSuccess(response.data)))
     .catch(error => dispatch(fetchshoppingcartFailure(error)))

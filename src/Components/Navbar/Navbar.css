@@ -1,0 +1,14 @@
+
+  
+   .badge {
+    position: absolute;
+    top: 10px;
+    /* right: -1px; */
+    padding: 5px 5px;
+    border-radius: 50%;
+    background: red;
+    color: white;
+  }
+  .nav-logo{
+      background-color:  #007bff;
+  }

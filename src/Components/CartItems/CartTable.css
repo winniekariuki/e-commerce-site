@@ -1,0 +1,31 @@
+.btn{
+    background-color: #00BFFF !important;
+}
+.empty{
+    color:black !important;
+}
+.checkout{
+    color:black !important;
+}
+
+.previous {
+   size:40px;
+    color: black;
+  }
+  .back{
+    margin-left: -18px;
+    margin-right: 10px;
+  }
+  .arrow-back{
+      width:43%
+  }
+  .cart{
+      margin-left: 300px;
+  }
+
+
+.delete:hover{
+color:red;
+cursor: pointer;
+      }
+  

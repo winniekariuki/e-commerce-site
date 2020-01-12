@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './CartTable.css';
+
 
 const ShoppingCartTable = ({...props}) => {
     const {
@@ -18,7 +20,7 @@ const ShoppingCartTable = ({...props}) => {
                         <thead>
                             <tr>
                                 <th className="product" >Product</th>
-                                <th className="price" >Price</th>
+                                <th className="cost" >Price</th>
                                 <th className="quantity" >Quantity</th>
                                 <th className="text-center">Subtotal</th>
                             </tr>
@@ -31,7 +33,7 @@ const ShoppingCartTable = ({...props}) => {
                                             <div className="col-sm-3 hidden-xs remove">
                                                 <i data-key={cartData.item_id}
                                                     onClick={handleRemove}
-                                                    className="fas cart-trash fa-trash-alt">
+                                                    className="fa fa-trash delete">
                                                 </i>
                                             </div>
                                             <div className="col-sm-9">
@@ -65,18 +67,21 @@ const ShoppingCartTable = ({...props}) => {
                         )}
                         <tfoot>
                             <tr>
-                                <td><Link to="/" className="add-to-cart back-btn btn btn-default"><i className="fa fa-angle-left btn btn-danger"></i> Continue Shopping</Link></td>
+                                <td><Link to="/" className="add-to-cart back-btn btn btn-default arrow-back"><i class="back material-icons w3-large">arrow_back</i>Continue Shopping</Link></td>
                                 <td className="actions" data-th="">
-                                    <Link onClick={handleDelete} to="" className="add-to-cart btn btn-success"><i className="fas fa-trash-alt"></i> Empty</Link>
+                                    <Link onClick={handleDelete} to="" className="add-to-cart btn"><i className="fas fa-trash-alt  empty"></i> Empty</Link>
                                 </td>
                                 <td className="hidden-xs text-center"><strong>Total &euro;{totalAmount.total_amount}</strong></td>
-                                <td><Link to={`/stripe/charge`} className="add-to-cart btn btn-success"> Checkout <i className="fa fa-angle-right"></i></Link></td>
+                                <td><Link to={`/stripe/charge`} className="add-to-cart btn  checkout"> Checkout </Link></td>
                             </tr>
                         </tfoot>
                     </table>
-                    : <div>
-                        <h6>Nothing in the shopping cart yet</h6>
-                        <Link className="btn btn-danger" to="/"> Go back to shop</Link>
+                : <div className="cart">
+                    <img src="https://www.freepngimg.com/thumb/web_design/42851-3-cart-free-clipart-hd.png" height="250" width="500" />
+                    <p>Your Cart is Empty! <br />
+                        Browse more to discover crazy deals and discounts
+                    </p>
+                        <Link className="btn" to="/"> Start Shopping</Link>
                     </div>}
                 </div>
     );
