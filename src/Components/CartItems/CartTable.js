@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './CartTable.css';
+import logo from "../../Image/new-logo.png";
+import StripeCheckout from 'react-stripe-checkout';
+// import CheckoutForm from './CheckoutForm'
 
 
 const ShoppingCartTable = ({...props}) => {
@@ -12,6 +15,13 @@ const ShoppingCartTable = ({...props}) => {
         shoppingCartTotal } = props;
     const shoppingCartData = cartData;
     const totalAmount = shoppingCartTotal;
+    const onToken = (token) => {
+        console.log('Stripe Token', token);
+      };
+      
+
+    const stripeApiKey = "pk_test_zrNK9sVySPgYCjzDbDsEblvR00W4Lm19Xx";
+    
     return (
         <div className="container">
             <h4 className="cart-header">{`${totalItemInCart} item(s) in your cart`}</h4>
@@ -72,7 +82,20 @@ const ShoppingCartTable = ({...props}) => {
                                     <Link onClick={handleDelete} to="" className="add-to-cart btn"><i className="fas fa-trash-alt  empty"></i> Empty</Link>
                                 </td>
                                 <td className="hidden-xs text-center"><strong>Total &euro;{totalAmount.total_amount}</strong></td>
-                                <td><Link to={`/stripe/charge`} className="add-to-cart btn  checkout"> Checkout </Link></td>
+                            <td>
+                            <StripeCheckout
+        amount={totalAmount.total_amount}
+        billingAddress
+        description="Awesome Product"
+        image={logo}
+        locale="auto"
+        name="YourDomain.tld"
+        stripeKey={stripeApiKey}
+        token={onToken}
+        zipCode
+
+      />
+  </td>
                             </tr>
                         </tfoot>
                     </table>

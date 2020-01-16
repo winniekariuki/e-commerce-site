@@ -9,6 +9,7 @@ import deleteItemActions from '../../actions/deleteCart';
 import * as accessCart from '../../Utilis/cart';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import StripeCheckout from 'react-stripe-checkout';
 
 
 class ShoppingCart extends Component {
@@ -119,13 +120,13 @@ const mapDispatchToProps = {
 };
 
 const mapStateToProps = ({
-    shoppingCartData,
+    shoppingCart,
     totalAmount,
     removeCartItem,
     updateShoppingCart,
     deleteCart,
 }) => ({
-    cartData:  shoppingCartData,
+    cartData:  shoppingCart,
         shoppingCartTotal: totalAmount,
         removeItem: removeCartItem,
         deleteCart: deleteCart,

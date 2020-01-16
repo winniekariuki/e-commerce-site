@@ -4,7 +4,7 @@ import logo from "../../Image/new-logo.png";
 import cart from "../../shoppingCart.png";
 import styled from "styled-components";
 import { ButtonContainer } from "../Button/Button";
-import Search from "../Search/Search";
+// import Search from "../Search/Search";
 import totalAmountActions from '../../actions/totalAmount';
 import shoppingcartActions from '../../actions/shoppingCart';
 import * as accessCart from '../../Utilis/cart';
@@ -63,9 +63,12 @@ updateShoppingCart = () => {
             </Link>
           </li>
         </ul>
-        <div className="Search">
-          <Search />
+        <div class="d-flex justify-content-center h-100">
+        <div class="searchbar">
+          <input class="search_input" type="text" name="" placeholder="Search..."/>
+          <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
         </div>
+      </div>
 
         <Link to="/cart" className="ml-auto">
           <ButtonContainer>
@@ -86,14 +89,13 @@ const mapDispatchToProps = {
 };
 
 const mapStateToProps = ({
-  shoppingCartData,
+  shoppingCart,
   totalAmount,
 }) => ({
-  cartData:  shoppingCartData,
+  cartData:  shoppingCart,
   shoppingCartTotal: totalAmount,
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Navbar);
 const NavWrapper = styled.nav`
   .nav-link {
     color: white !important;
@@ -101,3 +103,4 @@ const NavWrapper = styled.nav`
     text-transform: capitalize;
   }
 `;
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar);

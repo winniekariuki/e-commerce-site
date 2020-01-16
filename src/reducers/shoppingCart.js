@@ -1,6 +1,7 @@
 import {
   FETCH_SHOPPING_CART_SUCCESS, FETCH_SHOPPING_CART_FAILURE,
-  FETCH_SHOPPING_CART_REQUEST
+  FETCH_SHOPPING_CART_REQUEST, ADD_TO_CART_REQUEST,
+  ADD_TO_CART_SUCCESS, ADD_TO_CART_FAILURE
 } from "../actions/types";
 
 export const initialState = {
@@ -30,6 +31,23 @@ const shoppingcartReducer = (state = {}, action) => {
         data: action.data,
         loading: false
       };
+      case ADD_TO_CART_REQUEST:
+        return {
+          ...state,
+          loading: true
+        };
+      case ADD_TO_CART_SUCCESS:
+        return {
+          ...state,
+          data: action.data,
+          loading: false
+        };
+      case ADD_TO_CART_FAILURE:
+        return {
+          ...state,
+          errors: action.errors,
+          loading: false
+        };
     default:
       return state;
   }

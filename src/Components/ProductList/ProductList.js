@@ -82,20 +82,12 @@ export class ProductList extends Component {
       attributes: itemAttributes
     };
     toast.success("Added to cart successfully !");
-  
-    setTimeout(() => { 
-      this.props.history.push('/cart');
-  }, 1500)
-
- 
-    
     addToCart(payload).then(data => {
     }); 
   }
   
 
-  loadMore = () =>
-  
+  loadMore = () => 
   {
     this.setState(prev => {
       return { visible: prev.visible + 12 };
