@@ -102,7 +102,7 @@ updateShoppingCart = () => {
       <div class="wrap">
    <div class="search">
       <input id='searchText' onChange={this.handleChange}  type="text" class="searchTerm" placeholder="Search Products"/>
-      <button type="submit" class="searchButton" onClick={this.handleSearch}>
+      <button type="submit" class="searchButton" onClick={this.handleSearch} >
         <i class="fa fa-search"></i>
      </button>
    </div>
