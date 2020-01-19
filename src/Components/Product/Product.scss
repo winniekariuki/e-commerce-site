@@ -14,8 +14,9 @@ body {
 }
 
 /* Remove extra left and right margins, due to padding in columns */
-.row {
+.rows {
   margin: 0 -5px;
+  display: block;
   
 }
 

@@ -16,7 +16,7 @@ export default function Product({
   button
 }) {
   return (
-    <div className="row">
+    <div className="rows">
       <div className="column">
         <Flippy
           className=""

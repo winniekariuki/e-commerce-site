@@ -14,7 +14,8 @@ export class HomePage extends Component{
       <React.Fragment>
      <NavBar/>
      <Switch>
-       <Route exact path="/" component={ProductList}></Route>
+          <Route exact path="/" component={ProductList}></Route>
+       <Route exact path="/products" component={ProductList}></Route> 
        <Route path="/details" component={Details}></Route>
        <Route path="/cart" component={Cart}></Route>
        <Route  component={Default}></Route>

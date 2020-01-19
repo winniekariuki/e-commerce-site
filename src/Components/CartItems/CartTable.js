@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 import './CartTable.css';
 import logo from "../../Image/new-logo.png";
 import StripeCheckout from 'react-stripe-checkout';
-// import CheckoutForm from './CheckoutForm'
+import {
+    Image
+    } from 'semantic-ui-react';
 
 
 const ShoppingCartTable = ({...props}) => {
@@ -47,9 +49,8 @@ const ShoppingCartTable = ({...props}) => {
                                                 </i>
                                             </div>
                                             <div className="col-sm-9">
+                                            <h4 className="nomargin"> <Image src={require(`../../product_images/${cartData.image}`)} alt={cartData.image} height="100px" width="100px" /></h4>
                                                 <h4 className="nomargin">{cartData.name}</h4>
-                                                <p>{`Size: ${cartData.attributes.split(',')[0]}`}</p>
-                                                <p>{`Color: ${cartData.attributes.split(',')[1]}`}</p>
                                             </div>
                                         </div>
                                     </td>

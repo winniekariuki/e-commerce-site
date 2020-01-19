@@ -33,10 +33,8 @@ export const getProducts = (queryParam) => (dispatch, getState) => {
     .then(response => {
    
       const { data, meta } = response;
-      
-      const type = GET_ALL_PRODUCTS_SUCCESS;
 
-      dispatch(success(data,meta, type));
+      dispatch(success(data));
     })
     .catch(error => dispatch(failure(error)))
 };

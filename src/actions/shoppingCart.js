@@ -1,6 +1,9 @@
 import axios from 'axios';
 
-import { FETCH_SHOPPING_CART_SUCCESS, FETCH_SHOPPING_CART_FAILURE,FETCH_SHOPPING_CART_REQUEST } from "./types";
+import {
+  FETCH_SHOPPING_CART_SUCCESS, FETCH_SHOPPING_CART_FAILURE,
+  FETCH_SHOPPING_CART_REQUEST
+} from "./types";
 
 const baseUrl =  'https://backendapi.turing.com';
 
@@ -21,7 +24,6 @@ export const fetchshoppingcartRequest = () => ({
 const shoppingcartActions = (cartId) => dispatch => {
   dispatch(fetchshoppingcartRequest());
     const url = `${baseUrl}/shoppingcart/${cartId}`;
-    console.log("heey", cartId)
   return axios(url)
     .then(response => dispatch(fetchshoppingcartSuccess(response.data)))
     .catch(error => dispatch(fetchshoppingcartFailure(error)))

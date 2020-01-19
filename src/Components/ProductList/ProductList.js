@@ -128,7 +128,7 @@ export class ProductList extends Component {
      <li className={(this.state. currentPage === 1? ' active' : '') + ' page-item'}><a className="page-link" onClick={() => { this.onClickhandler(1) }}>1</a></li>
      <li className={(this.state.currentPage === 2 ? 'active' : '') + ' page-item'}><a className="page-link"  onClick={()=>{this.onClickhandler (2)}}>2</a></li>
     <li className={(this.state.currentPage === 3 ? 'active' : '') + ' page-item'}><a className="page-link"  onClick={()=>{this.onClickhandler (3)}}>3</a></li>
-    <li className={(this.state.currentPage === 4 ? 'active ' : '') + ' page-item'}><a className="page-link"  onClick={()=>{this.onClickhandler (4)}}>4</a></li>
+              <li className={(this.state.currentPage === 4 ? 'active ' : '') + ' page-item'}><a className="page-link" onClick={() => { this.onClickhandler(4) }}>4</a></li>
   
   </ul>
 </nav>

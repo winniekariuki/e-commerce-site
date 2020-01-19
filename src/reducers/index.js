@@ -9,12 +9,13 @@ import removeCartItem from './removeCartItem';
 import updateItem from './updateItem';
 
 
+
 const rootReducer = combineReducers({
     products,
     shoppingCart,
     totalAmount,
     removeCartItem,
-    updateItem
+    updateItem,
 });
 export default rootReducer;
 
