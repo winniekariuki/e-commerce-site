@@ -28,7 +28,8 @@ This Application enables a user to:
    <li>Then run <h5>npm start</h5> to run the application locally</li>
   </ol>
 </div>
+
 <div>
-  https://flamboyant-montalcini-f8bb43.netlify.com/
+ Link to deployed application: https://flamboyant-montalcini-f8bb43.netlify.com/
  </div>
 
