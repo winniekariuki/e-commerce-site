@@ -16,6 +16,7 @@ This Application enables a user to:
  - categories for products
  - compare products
  - sign up and login
+ - make it responsive
   </p>
 </div>
 
